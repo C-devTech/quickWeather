@@ -1,5 +1,5 @@
 #! python3
-# quickWeather.py - Prints the weather for a location from the command line
+# quickweather.py - Prints the weather for a location from the command line
 
 import json
 import requests
@@ -10,16 +10,16 @@ if len(sys.argv) < 2:
     print('Usage: quickWeather.py key location')
     sys.exit()
 
-# Download the JSON data from OpenWeatherMap.org's API using key from command line arquments.
+# Download the JSON data from OpenWeatherMap.org's API using key from command line arguments.
 key = sys.argv[1]
 
-# Compute location from command line arquments.
+# Compute location from command line arguments.
 location = ' '.join(sys.argv[2:])
 
-# Only available for paid accounts
+# Only available for paid accounts.
 url1 = 'https://api.openweathermap.org/data/2.5/forecast/daily?q=%s&cnt=3&units=imperial&APPID=%s' % (location, key)
 
-# available for free accounts
+# Available for free accounts.
 url2 = 'https://api.openweathermap.org/data/2.5/weather?q=%s&units=imperial&APPID=%s' % (location, key)
 url3 = 'https://api.openweathermap.org/data/2.5/forecast?q=%s&units=imperial&APPID=%s' % (location, key)
 
